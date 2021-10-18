@@ -10,10 +10,7 @@ import com.crowdar.core.PropertyManager;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ErrorService extends MethodsService {
-
-    public static final ThreadLocal<String> API_KEY = new ThreadLocal<String>();
-
+public class ErrorService extends BaseService {
 
     public static Response get(String jsonName) {
         return get(jsonName, ErrorResponse.class,setParams());

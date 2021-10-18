@@ -22,7 +22,7 @@
 		<cucumber.hooks>--glue com/crowdar/bdd/cukes --glue ar/apiExampleProject/hook</cucumber.hooks>
 		<cucumber.tags>@Success</cucumber.tags>
 		<cucumber.reporters>--plugin pretty</cucumber.reporters>
-		<crowdar.cucumber.option>src/test/resources/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.reporters}</crowdar.cucumber.option>
+		<crowdar.cucumber.option>src/test/resources/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --glue com/crowdar --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.reporters}</crowdar.cucumber.option>
         <crowdar.projectType>API</crowdar.projectType>
 
     </properties>
@@ -33,6 +33,15 @@
             </activation>
             <properties>
                 <apiExample.runner>testng.xml</apiExample.runner>
+            </properties>
+        </profile>
+        <profile>
+            <id>Local</id>
+            <activation>
+            </activation>
+            <properties>
+                <apiExample.runner>testng.xml</apiExample.runner>
+                <base.api.url>https://api.clockify.me/api/v1</base.api.url>
             </properties>
         </profile>
         <profile>
