@@ -17,7 +17,8 @@ Feature: Workspace
     Given X-Api-Key invalido
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
     And se obtuvo el status code <status>
+    Then se obtuvo el response esperado en <entity> con el <jsonNameResponse>
     @Workspace
     Examples:
-      | operation | entity | jsonName     | status |
-      | GET       | ERROR  | workspace/rq | 401    |
+      | operation | entity | jsonName     | status | jsonNameResponse |
+      | GET       | ERROR  | workspace/rq | 401    | 401              |
