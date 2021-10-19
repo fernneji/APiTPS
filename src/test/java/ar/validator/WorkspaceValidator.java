@@ -1,6 +1,6 @@
 package ar.validator;
 
-import api.model.workspaces.WorkspacesResponse;
+import api.model.workspace.WorkspacesResponse;
 import com.crowdar.api.rest.APIManager;
 import org.testng.Assert;
 

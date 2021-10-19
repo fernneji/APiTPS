@@ -1,4 +1,4 @@
-package api.model.workspaces;
+package api.model.workspace;
 
 public class Membership {
     private String userId;

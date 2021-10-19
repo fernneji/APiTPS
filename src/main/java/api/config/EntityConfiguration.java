@@ -1,10 +1,6 @@
 package api.config;
 
-import api.model.ErrorResponse;
-import services.ErrorService;
-import services.ResponseHeadersService;
-import services.UserService;
-import services.WorkspaceService;
+import services.*;
 
 public enum EntityConfiguration {
 
@@ -27,10 +23,22 @@ public enum EntityConfiguration {
             return WorkspaceService.class;
         }
     },
-    ERROR {
+    PROJECT {
         @Override
         public Class<?> getEntityService() {
-            return ErrorService.class;
+            return ProjectService.class;
+        }
+    },
+    WORKSPACE_ERROR {
+        @Override
+        public Class<?> getEntityService() {
+            return WorkspaceErrorService.class;
+        }
+    },
+    PROJECT_ERROR {
+        @Override
+        public Class<?> getEntityService() {
+            return ProjectErrorService.class;
         }
     };
 
